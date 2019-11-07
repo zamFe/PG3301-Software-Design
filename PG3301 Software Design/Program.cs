@@ -8,6 +8,7 @@ namespace PG3301_Software_Design
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("Felix says hello!");
+            Console.WriteLine("Andreas says hello!");
         }
     }
 }
