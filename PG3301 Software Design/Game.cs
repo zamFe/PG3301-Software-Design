@@ -4,6 +4,9 @@ namespace PG3301_Software_Design
 {
     interface Game
     {
+        //Return the game's ID
+        public int getGameID();
+
         //Return name of the game
         public string getName();
 
