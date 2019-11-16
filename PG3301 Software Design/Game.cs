@@ -5,15 +5,15 @@ namespace PG3301_Software_Design
     interface Game
     {
         //Return the game's ID
-        public int getGameID();
+        public int gameID { get; }
 
         //Return name of the game
-        public string getName();
+        public string name { get; }
 
         //Return the price of the game
-        public double getPrice();
+        public string key { get; }
 
         //Return the key for the game
-        public string getKey();
+        public double price { get; }
     }
 }
