@@ -7,9 +7,9 @@ namespace PG3301_Software_Design
         static void Main(string[] args)
         {
 
-            //BaseGame baseGame = new BaseGame(19.99, "Fortnite");
+            BaseGame baseGame = GameFactory.Create("TheBestGame");
 
-            BaseGame baseGame = GameFactory.Create();
+            BaseGame fortnite = GameFactory.Create("Fortnite");
 
             Super super = new Super(baseGame);
 
@@ -32,6 +32,8 @@ namespace PG3301_Software_Design
             Console.WriteLine(goldSuperDeluxe.GetDescription() + " Edition" + "\nPrice: " + goldSuperDeluxe.GetPrice() + "\n");
 
             Console.WriteLine(PureEpicness.GetDescription() + " Edition" + "\nPrice: " + PureEpicness.GetPrice() + "\n");
+
+            Console.WriteLine(fortnite.GetDescription() + " Edition" + "\nPrice: " + fortnite.GetPrice() + "\n");
 
         }
     }
