@@ -30,7 +30,7 @@ namespace PG3301_Software_Design
             return _price;
         }
 
-        public virtual string toString()
+        public override string ToString()
         {
             return _name + " Standard Edition\nPrice: " + _price + "\n";
         }

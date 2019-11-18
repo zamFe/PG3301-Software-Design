@@ -32,7 +32,7 @@ namespace PG3301_Software_Design
             return Math.Round(_game.GetPrice() * _price, 2);
         }
 
-        public string toString()
+        public override string ToString()
         {
             return getName() + getDescription() + " Edition\nPrice: " + GetPrice() + "\n";
         }

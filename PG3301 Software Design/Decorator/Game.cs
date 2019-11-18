@@ -10,6 +10,6 @@ namespace PG3301_Software_Design
 
         double GetPrice();
 
-        string toString();
+        string ToString();
     }
 }
