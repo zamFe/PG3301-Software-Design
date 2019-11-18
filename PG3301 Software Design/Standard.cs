@@ -4,10 +4,10 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
-    class StandardDecorator : GameDecorator
+    class Standard : GameDecorator
     {
 
-        public StandardDecorator(Game game) : base(game)
+        public Standard(Game game) : base(game)
         {
             _name = "Standard";
             _price = 0.0;

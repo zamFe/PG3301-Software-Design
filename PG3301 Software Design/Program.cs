@@ -9,9 +9,9 @@ namespace PG3301_Software_Design
 
             BaseGame baseGame = new BaseGame(19.99);
 
-            StandardDecorator standard = new StandardDecorator(baseGame);
+            Standard standard = new Standard(baseGame);
 
-            SuperDecorator super = new SuperDecorator(baseGame);
+            Super super = new Super(baseGame);
 
             Deluxe deluxe = new Deluxe(super);
 
