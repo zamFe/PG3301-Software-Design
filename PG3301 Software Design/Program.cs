@@ -6,9 +6,22 @@ namespace PG3301_Software_Design
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Felix says hello!");
-            Console.WriteLine("Andreas says hello!");
+
+            BaseGame baseGame = new BaseGame(19.99);
+
+            StandardDecorator standard = new StandardDecorator(baseGame);
+
+            SuperDecorator super = new SuperDecorator(baseGame);
+
+            Deluxe deluxe = new Deluxe(super);
+
+            Console.WriteLine(standard.GetDescription() + " Edition" + "\nPrice: " + standard.GetPrice() + "\n");
+
+            Console.WriteLine(super.GetDescription() + " Edition" + "\nPrice: " + super.GetPrice() + "\n");
+
+            Console.WriteLine(deluxe.GetDescription() + " Edition" + "\nPrice: " + deluxe.GetPrice() + "\n");
+
+
         }
     }
 }

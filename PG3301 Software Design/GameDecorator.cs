@@ -6,19 +6,25 @@ namespace PG3301_Software_Design
 {
     abstract class GameDecorator : Game
     {
-        private Game tmpGame; //unsure if private is correct
+        private Game _game;
+
+        protected string _name = "undefined Game";
+        protected double _price = 0.0;
 
         public GameDecorator(Game newGame)
         {
-            tmpGame = newGame;
+            _game = newGame;
         }
 
-        public int gameID { get; }
+        public string GetDescription()
+        {
+            return string.Format("{0} {1}", _game.GetDescription(), _name);
+        }
 
-        public string key { get; }
-
-        public string name { get; }
-
-        public double price { get; }
+        public double GetPrice()
+        {
+            return _game.GetPrice() + _price;
+        }
+ 
     }
 }
