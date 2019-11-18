@@ -4,13 +4,13 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
-    class Super : GameDecorator
+    class Gold : GameDecorator
     {
-
-        public Super(Game game) : base(game)
+        public Gold(Game game) : base(game)
         {
-            _name = "Super";
-            _price = 1.75;
+            _name = "Gold";
+            _price = 2;
         }
+
     }
 }

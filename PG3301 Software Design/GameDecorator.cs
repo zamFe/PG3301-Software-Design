@@ -23,7 +23,7 @@ namespace PG3301_Software_Design
 
         public double GetPrice()
         {
-            return _game.GetPrice() + _price;
+            return Math.Round(_game.GetPrice() * _price, 2);
         }
  
     }
