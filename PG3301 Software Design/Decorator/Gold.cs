@@ -8,7 +8,7 @@ namespace PG3301_Software_Design
     {
         public Gold(Game game) : base(game)
         {
-            _name = "Gold";
+            _description = "Gold";
             _price = 2;
         }
 

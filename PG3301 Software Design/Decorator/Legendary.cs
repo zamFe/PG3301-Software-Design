@@ -9,7 +9,7 @@ namespace PG3301_Software_Design
 
         public Legendary (Game game) : base(game)
         {
-            _name = "Legendary";
+            _description = "Legendary";
             _price = 3;
 
         }

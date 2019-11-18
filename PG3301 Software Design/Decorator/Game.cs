@@ -4,8 +4,12 @@ namespace PG3301_Software_Design
 {
     interface Game
     {
-        string GetDescription();
+        string getName();
+
+        string getDescription();
 
         double GetPrice();
+
+        string toString();
     }
 }

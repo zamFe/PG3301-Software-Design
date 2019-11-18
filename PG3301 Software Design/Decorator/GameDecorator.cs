@@ -9,6 +9,7 @@ namespace PG3301_Software_Design
         private Game _game;
 
         protected string _name = "undefined Game";
+        protected string _description;
         protected double _price = 0.0;
 
         public GameDecorator(Game newGame)
@@ -16,14 +17,24 @@ namespace PG3301_Software_Design
             _game = newGame;
         }
 
-        public string GetDescription()
+        public string getName()
         {
-            return string.Format("{0} {1}", _game.GetDescription(), _name);
+            return _game.getName();
+        }
+
+        public string getDescription()
+        {
+            return string.Format("{0} {1}", _game.getDescription(), _description);
         }
 
         public double GetPrice()
         {
             return Math.Round(_game.GetPrice() * _price, 2);
+        }
+
+        public string toString()
+        {
+            return getName() + getDescription() + " Edition\nPrice: " + GetPrice() + "\n";
         }
  
     }

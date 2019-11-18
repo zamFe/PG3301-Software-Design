@@ -9,7 +9,7 @@ namespace PG3301_Software_Design
 
         public Super(Game game) : base(game)
         {
-            _name = "Super";
+            _description = "Super";
             _price = 1.75;
         }
     }
