@@ -35,6 +35,8 @@ namespace PG3301_Software_Design
 
             Console.WriteLine(fortnite.toString());
 
+            Console.WriteLine("Your free fortnite key: " + KeyGenerator.GenerateKey() + "\n");
+
         }
     }
 }
