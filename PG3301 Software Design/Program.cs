@@ -7,13 +7,13 @@ namespace PG3301_Software_Design
         static void Main(string[] args)
         {
 
-            BaseGame baseGame = GameFactory.Create("TheBestGame");
+            BaseGame baseGame = GameFactory.Create();
 
-            BaseGame fortnite = GameFactory.Create("Fortnite");
+            BaseGame newGame = GameFactory.Create();
 
             Super super = new Super(baseGame);
 
-            Deluxe deluxe = new Deluxe(baseGame);
+            Deluxe deluxe = new Deluxe(newGame);
 
             Super superDeluxe = new Super( new Deluxe(baseGame));
 
@@ -33,9 +33,7 @@ namespace PG3301_Software_Design
 
             Console.WriteLine(PureEpicness.toString());
 
-            Console.WriteLine(fortnite.toString());
-
-            Console.WriteLine("Your free fortnite key: " + KeyGenerator.GenerateKey() + "\n");
+            Console.WriteLine(newGame.toString() + "Your Key: " +  KeyGenerator.GenerateKey() + "\n");
 
         }
     }
