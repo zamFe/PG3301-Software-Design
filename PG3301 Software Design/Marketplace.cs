@@ -6,12 +6,9 @@ namespace PG3301_Software_Design
 {
      static class Marketplace
     {
-        public static Random rnd;
-
+        
         public static void CreateGame()
         {
-            Console.WriteLine("Adding Game to market");
-
             GameKeyDistributor.AddGame(GameKeyController.MakeGameKey());
         }
 

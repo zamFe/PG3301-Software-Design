@@ -15,7 +15,7 @@ namespace PG3301_Software_Design
 
             for(int i = 0; i < 3; i++)
             {
-                GameKeyDistributor.AddGame(GameKeyController.MakeGameKey());
+                Marketplace.CreateGame();
             }
 
 
@@ -23,26 +23,6 @@ namespace PG3301_Software_Design
             {
                 customer.BuyGame();
             }
-
-            while (true)
-            {
-                //Console.WriteLine("\nAttempting to buy Overwatch");
-
-                GameKey coolGame = GameKeyDistributor.GetGame("Pokemon");
-
-                if (coolGame == null)
-                {
-                    Console.WriteLine("game is out of stock");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Successfuly purchased: " + coolGame.ToString());
-                }
-            }
-
-         
-
         }
     }
 }

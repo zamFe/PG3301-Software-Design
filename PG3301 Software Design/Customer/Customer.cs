@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace PG3301_Software_Design
 {
@@ -10,7 +11,6 @@ namespace PG3301_Software_Design
         private int _ID;
         private string _name;
         private Random rnd = new Random();
-       
 
         public Customer(int ID, string name )
         {
