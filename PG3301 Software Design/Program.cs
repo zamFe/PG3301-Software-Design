@@ -8,13 +8,12 @@ namespace PG3301_Software_Design
         static void Main(string[] args)
         {
 
-            Marketplace market = new Marketplace();
+            
 
-            List<Customer> customers = new List<Customer>() { new Customer(1, "Felix", market), new Customer(2, "Andreas", market), new Customer(3, "Tomas Uten H", market), new Customer(4, "Jesper", market)};
+            List<Customer> customers = new List<Customer>() { new Customer(1, "Felix"), new Customer(2, "Andreas"), new Customer(3, "Tomas Uten H"), new Customer(4, "Jesper")};
      
 
-            for(int i = 0; i < 3
-                ; i++)
+            for(int i = 0; i < 3; i++)
             {
                 GameKeyDistributor.AddGame(GameKeyController.MakeGameKey());
             }
