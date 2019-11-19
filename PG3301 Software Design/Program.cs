@@ -4,26 +4,28 @@ using System.Threading;
 
 namespace PG3301_Software_Design
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            //g4a stands for games4all, name of the game market
+            Marketplace g4a = new Marketplace();
+            List<Customer> customers = new List<Customer>() { new Customer(1, "Felix", g4a), new Customer(2, "Andreas", g4a), new Customer(3, "Tomas Uten H", g4a), new Customer(4, "Jesper", g4a)};
 
-
-            List<Customer> customers = new List<Customer>() { new Customer(1, "Felix"), new Customer(2, "Andreas"), new Customer(3, "Tomas Uten H"), new Customer(4, "Jesper")};
-     
-
-            for(int i = 0; i < 3; i++)
+            g4a.Start();
+            foreach (var customer in customers)
             {
-                Marketplace.CreateGame();
+                customer.Start();
+                
             }
+
+            Thread.Sleep(3000);
 
             foreach (var customer in customers)
             {
-                
-                customer.BuyGame();
+                customer.Stop();
             }
-
+            g4a.Stop();            
 
         }
 
