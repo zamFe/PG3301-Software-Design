@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace PG3301_Software_Design
 {
@@ -8,7 +9,6 @@ namespace PG3301_Software_Design
         static void Main(string[] args)
         {
 
-            
 
             List<Customer> customers = new List<Customer>() { new Customer(1, "Felix"), new Customer(2, "Andreas"), new Customer(3, "Tomas Uten H"), new Customer(4, "Jesper")};
      
@@ -18,11 +18,16 @@ namespace PG3301_Software_Design
                 Marketplace.CreateGame();
             }
 
-
             foreach (var customer in customers)
             {
+                
                 customer.BuyGame();
             }
+
+
         }
+
+
+
     }
 }
