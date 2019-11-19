@@ -25,6 +25,8 @@ namespace PG3301_Software_Design
             //Console.WriteLine(randomGame.ToString());
             //Console.WriteLine(randomGame2.ToString());
 
+            Console.WriteLine(GameKeyController.MakeGameKey().ToString());
+
         }
     }
 }
