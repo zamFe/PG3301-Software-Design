@@ -4,19 +4,19 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
-    class GameKeyDistributor
+    static class GameKeyDistributor
     {
 
-        Dictionary<string, List<GameKey>> GameKeys = new Dictionary<string, List<GameKey>>();
+        static Dictionary<string, List<GameKey>> GameKeys = new Dictionary<string, List<GameKey>>();
 
         
-        public void AddGame(GameKey gameKey)
+        public static void AddGame(GameKey gameKey)
         {
             List<GameKey> games = GameKeys[gameKey.Game.getName()];
             games.Add(gameKey);
         }
 
-        public void RemoveGame(GameKey gameKey)
+        public static void RemoveGame(GameKey gameKey)
         {
             List<GameKey> games = GameKeys[gameKey.Game.getName()];
 
@@ -29,7 +29,7 @@ namespace PG3301_Software_Design
             }
         }
 
-        public GameKey GetGame(string gameName)
+        public static GameKey GetGame(string gameName)
         {
             if(GameKeys[gameName] == null)
             {
