@@ -76,20 +76,23 @@ namespace PG3301_Software_Design
 
         public List<string> GetAvailableGames()
         {
-            //games registered in dictionary
-            List<string> gameList = new List<string>(GameKeys.Keys);
-
-            //check if there are keys left for each game
-            List<string> gameListAvailable = new List<string>(gameList.Count);
-            for(int i = 0; i < gameList.Count; i++)
+            lock (_lock)
             {
-                if(GameAvailable(gameList[i]))
-                {
-                    gameListAvailable.Add(gameList[i]);
-                }
-            }
+                //games registered in dictionary
+                List<string> gameList = new List<string>(GameKeys.Keys);
 
-            return gameListAvailable;
+                //check if there are keys left for each game
+                List<string> gameListAvailable = new List<string>(gameList.Count);
+                for (int i = 0; i < gameList.Count; i++)
+                {
+                    if (GameAvailable(gameList[i]))
+                    {
+                        gameListAvailable.Add(gameList[i]);
+                    }
+                }
+
+                return gameListAvailable;
+            }
         }
     }
 }
