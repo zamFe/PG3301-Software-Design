@@ -6,15 +6,19 @@ namespace PG3301_Software_Design
 {
     class Marketplace
     {
-
-        GameKeyDistributor gameKeyDistributor = new GameKeyDistributor();
-
         List<Game> games = new List<Game>();
         
 
         public void CreateGame()
         {
-            games.Add(gameKeyDistributor.getGame());
+            Console.WriteLine("Adding Game to market");
+
+            GameKeyDistributor.AddGame(GameKeyController.MakeGameKey());
+        }
+
+        public GameKey BuyGame(string gameName)
+        {
+            return GameKeyDistributor.GetGame(gameName);
         }
 
 

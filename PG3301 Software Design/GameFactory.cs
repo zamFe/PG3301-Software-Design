@@ -7,7 +7,7 @@ namespace PG3301_Software_Design
     static class GameFactory
     {
 
-        private static string[] _games = { "Call of Duty", "Pokemon Sword", "Pokemon Shield", "Fortnite", "Dark Souls", "Escape From Tarkov", "Minecraft", "Joe's Adventure", "Overwatch"};
+        private static string[] _games = {"Call of Duty", "Pokemon Sword", "Pokemon Shield", "Fortnite", "Dark Souls", "Escape From Tarkov", "Minecraft", "Joe's Adventure", "Overwatch"};
 
         public static Game Create()
         {

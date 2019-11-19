@@ -21,10 +21,11 @@ namespace PG3301_Software_Design
 
         public void BuyGame()
         {
-            Game bougthGame = GameFactory.Create();
+            GameKey bougthGame = _market.BuyGame("Pokemon Shield");
+
             if(bougthGame != null)
             {
-                Console.WriteLine("{0} bought: {1}Game Key: {2}\n", _name, bougthGame.ToString(), KeyGenerator.GenerateKey());
+                Console.WriteLine("{0} bought: {1}\n", _name, bougthGame.ToString());
             }
 
         }
