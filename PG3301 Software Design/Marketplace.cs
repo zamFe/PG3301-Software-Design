@@ -8,7 +8,7 @@ namespace PG3301_Software_Design
      class Marketplace : ThreadProxy
     {
         private readonly object _lock = new object();
-        private static Random rnd = new Random();
+        private static Random _rnd = new Random();
 
         //publisher that provides games
         public ProductDistributor Publisher = new ProductDistributor();
@@ -37,7 +37,7 @@ namespace PG3301_Software_Design
                 }
 
                 //Get random games from available games
-                Product bougthGame = Publisher.GetGame(availableGames[rnd.Next(0, availableGames.Count)]);
+                Product bougthGame = Publisher.GetGame(availableGames[_rnd.Next(0, availableGames.Count)]);
 
                 if (bougthGame != null)
                 {
@@ -67,7 +67,7 @@ namespace PG3301_Software_Design
         //Market will create games as long as thread is running
         protected override void Task()
         {
-            Thread.Sleep(rnd.Next(40, 600));
+            Thread.Sleep(_rnd.Next(40, 600));
             CreateProduct();
         }
     }
