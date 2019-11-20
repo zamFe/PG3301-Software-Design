@@ -40,7 +40,14 @@ namespace PG3301_Software_Design
 
                 if (bougthGame != null)
                 {
-                    Console.WriteLine("".PadRight(51) + "{0} bought: {1}\n", customer, bougthGame.ToString());
+                    //aligns purchase info to the right of the console, only used here so not put in function
+                    String msg = String.Format("{0} bought: {1}\n", customer, bougthGame.Game.getName() + bougthGame.Game.getDescription() + " Edition");
+                    Console.CursorLeft = Console.BufferWidth - msg.Length;
+                    Console.Write(msg);
+                    Console.CursorLeft = Console.BufferWidth - msg.Length;
+                    Console.Write("price: " + bougthGame.Game.GetPrice() + "\n");
+                    Console.CursorLeft = Console.BufferWidth - msg.Length;
+                    Console.Write("Key: " + bougthGame.Key + "\n\n");
                 }
 
                 return bougthGame;

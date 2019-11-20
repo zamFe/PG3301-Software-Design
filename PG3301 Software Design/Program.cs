@@ -20,12 +20,11 @@ namespace PG3301_Software_Design
 
             Thread.Sleep(4000);
 
+            g4a.Stop();
             foreach (var customer in customers)
             {
                 customer.Stop();
             }
-            g4a.Stop();            
-
         }
 
 

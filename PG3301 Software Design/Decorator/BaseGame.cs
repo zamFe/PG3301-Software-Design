@@ -35,6 +35,11 @@ namespace PG3301_Software_Design
             return _name + " Standard Edition\nPrice: " + _price + "\n";
         }
 
+        public string GetEdition()
+        {
+            return _name + " Standard Edition\n";
+        }
+
 
     }
 }

@@ -36,6 +36,11 @@ namespace PG3301_Software_Design
         {
             return getName() + getDescription() + " Edition\n".PadRight(60) + "Price:" + GetPrice() + "\n";
         }
- 
+
+        public string GetEdition()
+        {
+            return getName() + getDescription() + " Edition\n";
+        }
+
     }
 }
