@@ -11,6 +11,5 @@ namespace PG3301_Software_Design
             _description = "Gold";
             _price = 2;
         }
-
     }
 }

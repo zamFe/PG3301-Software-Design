@@ -13,7 +13,6 @@ namespace PG3301_Software_Design
         {
             this.Game = Game;
             this.Key = Key;
-
         }
 
         public override string ToString()

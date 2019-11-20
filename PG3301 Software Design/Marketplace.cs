@@ -7,18 +7,17 @@ namespace PG3301_Software_Design
 {
      class Marketplace : ThreadProxy
     {
-
-        Random rnd = new Random();
-
         private readonly object _lock = new object();
 
         public GameKeyDistributor Publisher = new GameKeyDistributor();
+
+        Random rnd = new Random();
 
         public void CreateGame()
         {
             lock(_lock)
             {
-            Publisher.AddGame(GameKeyController.MakeProduct());
+                Publisher.AddGame(GameKeyController.MakeProduct());
             }
         }
 
@@ -27,7 +26,7 @@ namespace PG3301_Software_Design
             lock (_lock)
             {
 
-            List<string> availableGames = Publisher.GetAvailableGames();
+                List<string> availableGames = Publisher.GetAvailableGames();
 
                 if (availableGames.Count <= 0)
                 {
@@ -68,8 +67,5 @@ namespace PG3301_Software_Design
             Thread.Sleep(rnd.Next(40, 600));
             CreateGame();
         }
-
-
-
     }
 }

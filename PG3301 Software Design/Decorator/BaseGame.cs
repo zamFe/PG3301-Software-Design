@@ -12,7 +12,6 @@ namespace PG3301_Software_Design
         {
             _name = name;
             _price = price;
-
         }
 
         public virtual string GetName()
@@ -39,6 +38,5 @@ namespace PG3301_Software_Design
         {
             return GetEdition() + "\nPrice: " + _price + "\n";
         }
-
     }
 }

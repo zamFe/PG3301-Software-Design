@@ -43,6 +43,5 @@ namespace PG3301_Software_Design
             _isRunning = false;
             _thread.Join();
         }
-
     }
 }

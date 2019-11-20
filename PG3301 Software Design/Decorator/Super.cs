@@ -6,7 +6,6 @@ namespace PG3301_Software_Design
 {
     class Super : GameDecorator
     {
-
         public Super(IGame game) : base(game)
         {
             _description = "Super";
