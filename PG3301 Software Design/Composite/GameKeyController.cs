@@ -7,9 +7,9 @@ namespace PG3301_Software_Design
    
     static class GameKeyController
     {
-        public static GameKey MakeGameKey()
+        public static Product MakeProduct()
         {
-            return new GameKey(GameFactory.Create(), KeyGenerator.GenerateKey());
+            return new Product(GameFactory.Create(), KeyGenerator.GenerateKey());
         }
     }
 }

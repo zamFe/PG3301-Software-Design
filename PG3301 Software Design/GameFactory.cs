@@ -9,23 +9,22 @@ namespace PG3301_Software_Design
 
         private static string[] _games = {"Call of Duty", "Pokemon Sword", "Pokemon Shield", "Fortnite", "Dark Souls", "Escape From Tarkov", "Minecraft", "Joe's Adventure", "Overwatch"};
 
-        public static Game Create()
+        public static IGame Create()
         {
-            Random rn = new Random();
+            Random rnd = new Random();
 
-            Game game = new BaseGame((double) rn.Next(5,40) + 0.99, _games[rn.Next(0, _games.Length)]);
+            IGame game = new BaseGame((double) rnd.Next(5,40) + 0.99, _games[rnd.Next(0, _games.Length)]);
 
-            if(rn.Next(2) == 1)
+            if(rnd.Next(2) == 1)
                 game = new Super(game);
-            if (rn.Next(2) == 1)
+            if (rnd.Next(2) == 1)
                 game = new Deluxe(game);
-            if (rn.Next(2) == 1)
+            if (rnd.Next(2) == 1)
                 game = new Gold(game);
-            if (rn.Next(2) == 1)
+            if (rnd.Next(2) == 1)
                 game = new Legendary(game);
 
             return game;
         }
-
     }
 }

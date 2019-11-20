@@ -11,19 +11,19 @@ namespace PG3301_Software_Design
         protected bool _isRunning;
 
         public Thread Thread { get => _thread; }
-        public bool isAlive { get => _thread.IsAlive; }
-        public bool isRunning { get => _isRunning;  }
+        public bool IsAlive { get => _thread.IsAlive; }
+        public bool IsRunning { get => _isRunning;  }
 
         public ThreadProxy()
         {
-            _thread = new Thread(new ThreadStart(tLoop));
+            _thread = new Thread(new ThreadStart(TLoop));
             _isRunning = false;
         }
 
         //the task of the thread must be inplemented in extended class
         protected abstract void Task();
         
-        protected void tLoop()
+        protected void TLoop()
         {
             while(_isRunning)
             {

@@ -4,27 +4,27 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
-    abstract class GameDecorator : Game
+    abstract class GameDecorator : IGame
     {
-        private Game _game;
+        private IGame _game;
 
         protected string _name = "undefined Game";
         protected string _description;
         protected double _price = 0.0;
 
-        public GameDecorator(Game newGame)
+        public GameDecorator(IGame newGame)
         {
             _game = newGame;
         }
 
-        public string getName()
+        public string GetName()
         {
-            return _game.getName();
+            return _game.GetName();
         }
 
-        public string getDescription()
+        public string GetDescription()
         {
-            return string.Format("{0} {1}", _game.getDescription(), _description);
+            return string.Format("{0} {1}", _game.GetDescription(), _description);
         }
 
         public double GetPrice()
@@ -34,7 +34,7 @@ namespace PG3301_Software_Design
 
         public string GetEdition()
         {
-            return getName() + getDescription() + " Edition\n";
+            return GetName() + GetDescription() + " Edition\n";
         }
 
         public override string ToString()

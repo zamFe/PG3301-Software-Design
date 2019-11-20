@@ -48,8 +48,8 @@ namespace PG3301_Software_Design
 
         protected override void Task()
         {
-            while (_market.publisher.GetAvailableGames().Count > 0 && _isRunning) ;
-            GameKey g = _market.BuyGame(_name);
+            while (_market.Publisher.GetAvailableGames().Count > 0 && _isRunning) ;
+            Product g = _market.BuyGame(_name);
         }
 
     }

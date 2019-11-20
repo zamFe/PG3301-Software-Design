@@ -2,11 +2,11 @@ using System;
 
 namespace PG3301_Software_Design
 {
-    interface Game
+    interface IGame
     {
-        string getName();
+        string GetName();
 
-        string getDescription();
+        string GetDescription();
 
         double GetPrice();
 

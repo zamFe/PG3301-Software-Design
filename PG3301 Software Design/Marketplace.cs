@@ -12,22 +12,22 @@ namespace PG3301_Software_Design
 
         private readonly object _lock = new object();
 
-        public GameKeyDistributor publisher = new GameKeyDistributor();
+        public GameKeyDistributor Publisher = new GameKeyDistributor();
 
         public void CreateGame()
         {
             lock(_lock)
             {
-            publisher.AddGame(GameKeyController.MakeGameKey());
+            Publisher.AddGame(GameKeyController.MakeProduct());
             }
         }
 
-        public GameKey BuyGame(string customer)
+        public Product BuyGame(string customer)
         {
             lock (_lock)
             {
 
-            List<string> availableGames = publisher.GetAvailableGames();
+            List<string> availableGames = Publisher.GetAvailableGames();
 
                 if (availableGames.Count <= 0)
                 {
@@ -36,7 +36,7 @@ namespace PG3301_Software_Design
                 }
 
                 //Get random games from available games
-                GameKey bougthGame = publisher.GetGame(availableGames[rnd.Next(0, availableGames.Count)]);
+                Product bougthGame = Publisher.GetGame(availableGames[rnd.Next(0, availableGames.Count)]);
 
                 if (bougthGame != null)
                 {

@@ -2,7 +2,7 @@ using System;
 
 namespace PG3301_Software_Design
 {
-    class BaseGame : Game
+    class BaseGame : IGame
     {
         private string _name;
         private string _description = "";
@@ -15,12 +15,12 @@ namespace PG3301_Software_Design
 
         }
 
-        public virtual string getName()
+        public virtual string GetName()
         {
             return _name;
         }
 
-        public virtual string getDescription()
+        public virtual string GetDescription()
         {
             return _description;
         }

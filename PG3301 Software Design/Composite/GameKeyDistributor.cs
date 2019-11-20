@@ -8,30 +8,30 @@ namespace PG3301_Software_Design
     class GameKeyDistributor
     {
 
-        private Dictionary<string, List<GameKey>> GameKeys = new Dictionary<string, List<GameKey>>();
+        private Dictionary<string, List<Product>> GameKeys = new Dictionary<string, List<Product>>();
 
         private readonly object _lock = new object();
 
-        public void AddGame(GameKey gameKey)
+        public void AddGame(Product gameKey)
         {
-            if (!GameKeys.ContainsKey(gameKey.Game.getName()))
+            if (!GameKeys.ContainsKey(gameKey.Game.GetName()))
             {
-                GameKeys.Add(gameKey.Game.getName(), new List<GameKey>());
+                GameKeys.Add(gameKey.Game.GetName(), new List<Product>());
             }
-            List<GameKey> games = GameKeys[gameKey.Game.getName()];
+            List<Product> games = GameKeys[gameKey.Game.GetName()];
             games.Add(gameKey);
             Console.WriteLine("Added - " + gameKey.Game.GetEdition());
             //Console.WriteLine("Added - " + gameKey.Game.getName() + gameKey.Game.getDescription() + " Edition:\n");
             //Console.WriteLine("Amount of available games: " + GetAvailableGames().Count + "\n");
         }
 
-        public void RemoveGame(GameKey gameKey)
+        public void RemoveGame(Product gameKey)
         {
-            List<GameKey> games = GameKeys[gameKey.Game.getName()];
+            List<Product> games = GameKeys[gameKey.Game.GetName()];
 
             for (int i = 0; i < games.Count; i++)
             {
-                GameKey current = games[i];
+                Product current = games[i];
                 if (current.Equals(gameKey))
                 {
                     games.RemoveAt(i);
@@ -40,7 +40,7 @@ namespace PG3301_Software_Design
         }
 
             //gets first GameKey with matching name
-            public GameKey GetGame(string gameName)
+            public Product GetGame(string gameName)
             {
                 if (!GameAvailable(gameName))
                 {
@@ -48,9 +48,9 @@ namespace PG3301_Software_Design
                     return null;
                 }
 
-                List<GameKey> games = GameKeys[gameName];
+                List<Product> games = GameKeys[gameName];
 
-                GameKey game = games[0];
+                Product game = games[0];
                 games.RemoveAt(0);
 
                 return game;
@@ -66,7 +66,7 @@ namespace PG3301_Software_Design
                     return false;
                 }
 
-                List<GameKey> games = GameKeys[gameName];
+                List<Product> games = GameKeys[gameName];
 
                 if (games.Count == 0)
                 {

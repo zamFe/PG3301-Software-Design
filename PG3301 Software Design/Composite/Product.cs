@@ -4,12 +4,12 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
-    class GameKey
+    class Product
     {
-        public Game Game;
+        public IGame Game;
         public string Key;
 
-        public GameKey(Game Game, string Key)
+        public Product(IGame Game, string Key)
         {
             this.Game = Game;
             this.Key = Key;
