@@ -40,7 +40,7 @@ namespace PG3301_Software_Design
 
                 if (bougthGame != null)
                 {
-                    Console.WriteLine("{0} bought: {1}\n", customer, bougthGame.ToString());
+                    Console.WriteLine("".PadRight(51) + "{0} bought: {1}\n", customer, bougthGame.ToString());
                 }
 
                 return bougthGame;
@@ -49,7 +49,7 @@ namespace PG3301_Software_Design
 
         protected override void Task()
         {
-            Thread.Sleep(rnd.Next(100, 500));
+            Thread.Sleep(rnd.Next(400, 600));
             CreateGame();
         }
 

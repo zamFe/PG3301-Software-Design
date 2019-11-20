@@ -18,7 +18,7 @@ namespace PG3301_Software_Design
 
         public override string ToString()
         {
-            return Game.ToString() + "Key: " + Key + "\n";
+            return Game.ToString() + "".PadRight(51) + "Key: " + Key + "\n";
         }
     }
 }

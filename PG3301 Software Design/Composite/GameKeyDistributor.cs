@@ -20,10 +20,12 @@ namespace PG3301_Software_Design
             }
             List<GameKey> games = GameKeys[gameKey.Game.getName()];
             games.Add(gameKey);
-            Console.WriteLine("Added - " + gameKey.Game.getName() + gameKey.Game.getDescription());
-            Console.WriteLine("Amount of available games: " + GetAvailableGames().Count + "\n");
+            Console.WriteLine("Added - " + gameKey.Game.getName() + gameKey.Game.getDescription() + " Edition:\n");
+            //Console.WriteLine("Amount of available games: " + GetAvailableGames().Count + "\n");
         }
 
+        //We dont use it
+        /*
         public void RemoveGame(GameKey gameKey)
         {
             List<GameKey> games = GameKeys[gameKey.Game.getName()];
@@ -36,6 +38,7 @@ namespace PG3301_Software_Design
                 }
             }
         }
+        */
 
         //gets first GameKey with matching name
         public GameKey GetGame(string gameName)

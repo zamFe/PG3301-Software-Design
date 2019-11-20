@@ -34,7 +34,7 @@ namespace PG3301_Software_Design
 
         public override string ToString()
         {
-            return getName() + getDescription() + " Edition\nPrice: " + GetPrice() + "\n";
+            return getName() + getDescription() + " Edition\n".PadRight(60) + "Price:" + GetPrice() + "\n";
         }
  
     }

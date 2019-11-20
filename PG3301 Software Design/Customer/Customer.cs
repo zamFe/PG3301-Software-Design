@@ -11,7 +11,7 @@ namespace PG3301_Software_Design
         private int _ID;
         private string _name;
         Marketplace _market;
-        private Random rnd = new Random();
+        //private Random rnd = new Random();
 
         public Customer(int ID, string name , Marketplace market)
         {
@@ -48,7 +48,7 @@ namespace PG3301_Software_Design
 
         protected override void Task()
         {
-            while (_market.publisher.GetAvailableGames().Count <= 0 && _isRunning) ;
+            while (_market.publisher.GetAvailableGames().Count > 0 && _isRunning) ;
             GameKey g = _market.BuyGame(_name);
         }
 

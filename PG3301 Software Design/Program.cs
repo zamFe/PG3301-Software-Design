@@ -16,10 +16,9 @@ namespace PG3301_Software_Design
             foreach (var customer in customers)
             {
                 customer.Start();
-                
             }
 
-            Thread.Sleep(3000);
+            Thread.Sleep(4000);
 
             foreach (var customer in customers)
             {
