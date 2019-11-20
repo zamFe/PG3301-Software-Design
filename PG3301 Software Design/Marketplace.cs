@@ -41,7 +41,7 @@ namespace PG3301_Software_Design
                 if (bougthGame != null)
                 {
                     //aligns purchase info to the right of the console, only used here so not put in function
-                    String msg = String.Format("{0} bought: {1}\n", customer, bougthGame.Game.getName() + bougthGame.Game.getDescription() + " Edition");
+                    String msg = String.Format("{0} bought: {1}", customer, bougthGame.Game.GetEdition());
                     Console.CursorLeft = Console.BufferWidth - msg.Length;
                     Console.Write(msg);
                     Console.CursorLeft = Console.BufferWidth - msg.Length;
@@ -56,7 +56,7 @@ namespace PG3301_Software_Design
 
         protected override void Task()
         {
-            Thread.Sleep(rnd.Next(400, 600));
+            Thread.Sleep(rnd.Next(40, 600));
             CreateGame();
         }
 
