@@ -12,13 +12,14 @@ namespace PG3301_Software_Design
             Marketplace g4a = new Marketplace();
 
             List<Customer> customers = new List<Customer>(5);
-            List<string> names = new List<string>() {"Felix", "Andreas", "Jesper", "Tomas uten H", "Bjarne", "Torild", "Beate"};
-            Random rnd = new Random();
 
-            for (int i = 0; i < 5; i++)
-            {
-                customers.Add(CustomerFactory.Create(names[rnd.Next(0, names.Count - 1)], g4a));
-            }
+            customers.Add(CustomerFactory.Create("Felix", g4a));
+            customers.Add(CustomerFactory.Create("Andreas", g4a));
+            customers.Add(CustomerFactory.Create("Tomas uten H", g4a));
+            customers.Add(CustomerFactory.Create("Jesper", g4a));
+            customers.Add(CustomerFactory.Create("Trude", g4a));
+            customers.Add(CustomerFactory.Create("Agnete", g4a));
+
 
             g4a.Start();
             foreach (var customer in customers)
