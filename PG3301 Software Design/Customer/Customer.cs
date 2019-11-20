@@ -21,6 +21,17 @@ namespace PG3301_Software_Design
           
         }
 
+        public int getID()
+        {
+            return _ID;
+        }
+
+        public void setID(int newID)
+        {
+            _ID = newID;
+        }
+
+
         protected override void Task()
         {
             while (_market.publisher.GetAvailableGames().Count > 0 && _isRunning) ;
