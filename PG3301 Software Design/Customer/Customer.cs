@@ -11,7 +11,6 @@ namespace PG3301_Software_Design
         private int _ID;
         private string _name;
         Marketplace _market;
-        //private Random rnd = new Random();
 
         public Customer(int ID, string name , Marketplace market)
         {
@@ -21,17 +20,17 @@ namespace PG3301_Software_Design
           
         }
 
-        public int getID()
+        public int GetID()
         {
             return _ID;
         }
 
-        public void setID(int newID)
+        public void SetID(int newID)
         {
             _ID = newID;
         }
 
-
+        //customer will try to purchase available products as long as thread is running
         protected override void Task()
         {
             while (_market.Publisher.GetAvailableGames().Count > 0 && _isRunning) ;

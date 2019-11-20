@@ -8,12 +8,13 @@ namespace PG3301_Software_Design
      class Marketplace : ThreadProxy
     {
         private readonly object _lock = new object();
+        private static Random rnd = new Random();
 
+        //publisher that provides games
         public ProductDistributor Publisher = new ProductDistributor();
 
-        private Random rnd = new Random();
-
-        public void CreateGame()
+        //called by marketplace upon putting out new products
+        public void CreateProduct()
         {
             lock(_lock)
             {
@@ -21,6 +22,7 @@ namespace PG3301_Software_Design
             }
         }
 
+        //called by customers upon purchasing game
         public Product BuyGame(string customer)
         {
             lock (_lock)
@@ -62,11 +64,11 @@ namespace PG3301_Software_Design
             }
         }
 
-        //Starts up the Market and creating games
+        //Market will create games as long as thread is running
         protected override void Task()
         {
             Thread.Sleep(rnd.Next(40, 600));
-            CreateGame();
+            CreateProduct();
         }
     }
 }

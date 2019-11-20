@@ -12,8 +12,8 @@ namespace PG3301_Software_Design
 
         private readonly object _lock = new object();
 
-        /* Adds Game and Key to a Dictionary if not already, 
-         * If its already there Add it to the correct list containing this game's name
+        /* Adds Product to list in ditionary corresponding to the games name
+         * If games name isn't in dictionary, create new list and map to that name
          */
         public void AddGame(Product product)
         {
@@ -25,9 +25,8 @@ namespace PG3301_Software_Design
             games.Add(product);
             Console.WriteLine("Added - " + product.Game.GetEdition());
         }
-        /* Remove Game and Key from a Dictionary
+        /* Removes specific product
          * If not in Dictionary just return
-         * If in Dictionary traverse list and remove the first matching it
          */
         public void RemoveGame(Product product)
         {
@@ -48,7 +47,7 @@ namespace PG3301_Software_Design
             }
         }
 
-            //gets first GameKey with matching name
+            //gets first GameKey with matching name 
             public Product GetGame(string gameName)
             {
                 if (!GameAvailable(gameName))
@@ -66,7 +65,7 @@ namespace PG3301_Software_Design
 
             }
 
-            //Returns if game is available
+            //Returns true if specified game have keys available
             public bool GameAvailable(string gameName)
             {
 
@@ -85,7 +84,7 @@ namespace PG3301_Software_Design
                 return true;
             }
 
-            //Traverse a list of Available games and returns the list
+            //Return all registered games that have keys available
             public List<string> GetAvailableGames()
             {
                 lock (_lock)

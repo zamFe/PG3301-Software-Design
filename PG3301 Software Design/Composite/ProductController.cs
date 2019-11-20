@@ -7,7 +7,7 @@ namespace PG3301_Software_Design
    
     static class ProductController
     {
-        //Create A Game with a Key and returns it
+        //Combine game with an unique Key to get a sellable product and return it
         public static Product MakeProduct()
         {
             return new Product(GameFactory.Create(), KeyGenerator.GenerateKey());

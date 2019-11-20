@@ -23,6 +23,7 @@ namespace PG3301_Software_Design
         //the task of the thread must be inplemented in extended class
         protected abstract void Task();
         
+        //keep doing task from start is called until stop is called
         protected void TLoop()
         {
             while(_isRunning)
@@ -31,6 +32,7 @@ namespace PG3301_Software_Design
             }
         }
 
+        //starts the thread and implemented task
         public void Start()
         {
             _isRunning = true;
@@ -38,6 +40,7 @@ namespace PG3301_Software_Design
             while (!_thread.IsAlive) ;
         }
 
+        //upon stopping, join the thread
         public void Stop()
         {
             _isRunning = false;
