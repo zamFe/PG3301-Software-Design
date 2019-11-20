@@ -11,7 +11,7 @@ namespace PG3301_Software_Design
 
         public ProductDistributor Publisher = new ProductDistributor();
 
-        Random rnd = new Random();
+        private Random rnd = new Random();
 
         public void CreateGame()
         {
