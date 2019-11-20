@@ -10,7 +10,15 @@ namespace PG3301_Software_Design
         {
             //g4a stands for games4all, name of the game market (WIP)
             Marketplace g4a = new Marketplace();
-            List<Customer> customers = new List<Customer>() { new Customer(1, "Felix", g4a), new Customer(2, "Andreas", g4a), new Customer(3, "Tomas Uten H", g4a), new Customer(4, "Jesper", g4a)};
+
+            List<Customer> customers = new List<Customer>(5);
+            List<string> names = new List<string>() {"Felix", "Andreas", "Jesper", "Tomas uten H", "Bjarne", "Torild", "Beate"};
+            Random rnd = new Random();
+
+            for (int i = 0; i < 5; i++)
+            {
+                customers.Add(CustomerFactory.Create(names[rnd.Next(0, names.Count - 1)], g4a));
+            }
 
             g4a.Start();
             foreach (var customer in customers)
