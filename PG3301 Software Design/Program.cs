@@ -13,7 +13,7 @@ namespace PG3301_Software_Design
             List<Customer> customers = new List<Customer>() { new Customer(1, "Felix", g4a), new Customer(2, "Andreas", g4a), new Customer(3, "Tomas Uten H", g4a), new Customer(4, "Jesper", g4a)};
 
             g4a.Start();
-            foreach (var customer in customers)
+            foreach (customer in customers)
             {
                 customer.Start();
             }
