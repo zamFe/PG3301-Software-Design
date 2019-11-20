@@ -42,11 +42,20 @@ namespace PG3301_Software_Design
                 {
                     //aligns purchase info to the right of the console, only used here so not put in function
                     String msg = String.Format("{0} bought: {1}", customer, bougthGame.Game.GetEdition());
-                    Console.CursorLeft = Console.BufferWidth - msg.Length;
+                    if (Console.BufferWidth < msg.Length)
+                        Console.CursorLeft = Console.BufferWidth / 2;
+                    else
+                        Console.CursorLeft = Console.BufferWidth - msg.Length;
                     Console.Write(msg);
-                    Console.CursorLeft = Console.BufferWidth - msg.Length;
+                    if (Console.BufferWidth < msg.Length)
+                        Console.CursorLeft = Console.BufferWidth / 2;
+                    else
+                        Console.CursorLeft = Console.BufferWidth - msg.Length;
                     Console.Write("price: " + bougthGame.Game.GetPrice() + "\n");
-                    Console.CursorLeft = Console.BufferWidth - msg.Length;
+                    if (Console.BufferWidth < msg.Length)
+                        Console.CursorLeft = Console.BufferWidth / 2;
+                    else
+                        Console.CursorLeft = Console.BufferWidth - msg.Length;
                     Console.Write("Key: " + bougthGame.Key + "\n\n");
                 }
 
