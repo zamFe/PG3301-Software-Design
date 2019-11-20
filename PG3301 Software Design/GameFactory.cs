@@ -6,8 +6,10 @@ namespace PG3301_Software_Design
 {
     static class GameFactory
     {
+        //Name of Games sold in the Market
         private static string[] _games = {"Call of Duty", "Pokemon Sword", "Pokemon Shield", "Fortnite", "Dark Souls", "Escape From Tarkov", "Minecraft", "Joe's Adventure", "Overwatch"};
 
+        //Creating game with random version and returns it
         public static IGame Create()
         {
             Random rnd = new Random();

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
+    //Generating a random Key with format AAAAA-BBBBB-CCCCC-DDDDD with specified Charset
     static class KeyGenerator
     {
         public static string GenerateKey()

@@ -8,31 +8,40 @@ namespace PG3301_Software_Design
     class GameKeyDistributor
     {
 
-        private Dictionary<string, List<Product>> GameKeys = new Dictionary<string, List<Product>>();
+        private readonly Dictionary<string, List<Product>> Products = new Dictionary<string, List<Product>>();
 
         private readonly object _lock = new object();
 
-        public void AddGame(Product gameKey)
+        /* Adds Game and Key to a Dictionary if not already, 
+         * If its already there Add it to the correct list containing this game's name
+         */
+        public void AddGame(Product product)
         {
-            if (!GameKeys.ContainsKey(gameKey.Game.GetName()))
+            if (!Products.ContainsKey(product.Game.GetName()))
             {
-                GameKeys.Add(gameKey.Game.GetName(), new List<Product>());
+                Products.Add(product.Game.GetName(), new List<Product>());
             }
-            List<Product> games = GameKeys[gameKey.Game.GetName()];
-            games.Add(gameKey);
-            Console.WriteLine("Added - " + gameKey.Game.GetEdition());
-            //Console.WriteLine("Added - " + gameKey.Game.getName() + gameKey.Game.getDescription() + " Edition:\n");
-            //Console.WriteLine("Amount of available games: " + GetAvailableGames().Count + "\n");
+            List<Product> games = Products[product.Game.GetName()];
+            games.Add(product);
+            Console.WriteLine("Added - " + product.Game.GetEdition());
         }
-
-        public void RemoveGame(Product gameKey)
+        /* Remove Game and Key from a Dictionary
+         * If not in Dictionary just return
+         * If in Dictionary traverse list and remove the first matching it
+         */
+        public void RemoveGame(Product product)
         {
-            List<Product> games = GameKeys[gameKey.Game.GetName()];
+            if(!Products.ContainsKey(product.Game.GetName()))
+            {
+                return;
+            }
+
+            List<Product> games = Products[product.Game.GetName()];
 
             for (int i = 0; i < games.Count; i++)
             {
                 Product current = games[i];
-                if (current.Equals(gameKey))
+                if (current.Equals(product))
                 {
                     games.RemoveAt(i);
                 }
@@ -48,7 +57,7 @@ namespace PG3301_Software_Design
                     return null;
                 }
 
-                List<Product> games = GameKeys[gameName];
+                List<Product> games = Products[gameName];
 
                 Product game = games[0];
                 games.RemoveAt(0);
@@ -57,16 +66,16 @@ namespace PG3301_Software_Design
 
             }
 
-
+            //Returns if game is available
             public bool GameAvailable(string gameName)
             {
 
-                if (!GameKeys.ContainsKey(gameName))
+                if (!Products.ContainsKey(gameName))
                 {
                     return false;
                 }
 
-                List<Product> games = GameKeys[gameName];
+                List<Product> games = Products[gameName];
 
                 if (games.Count == 0)
                 {
@@ -76,12 +85,13 @@ namespace PG3301_Software_Design
                 return true;
             }
 
+            //Traverse a list of Available games and returns the list
             public List<string> GetAvailableGames()
             {
                 lock (_lock)
                 {
                     //games registered in dictionary
-                    List<string> gameList = new List<string>(GameKeys.Keys);
+                    List<string> gameList = new List<string>(Products.Keys);
 
                     //check if there are keys left for each game
                     List<string> gameListAvailable = new List<string>(gameList.Count);

@@ -62,6 +62,7 @@ namespace PG3301_Software_Design
             }
         }
 
+        //Starts up the Market and creating games
         protected override void Task()
         {
             Thread.Sleep(rnd.Next(40, 600));
