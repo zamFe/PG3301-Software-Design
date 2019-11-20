@@ -11,7 +11,7 @@ namespace PG3301_Software_Design
 
         public ProductDistributor Publisher = new ProductDistributor();
 
-        private Random rnd = new Random();
+        private readonly Random _rnd = new Random();
 
         public void CreateGame()
         {
@@ -35,7 +35,7 @@ namespace PG3301_Software_Design
                 }
 
                 //Get random games from available games
-                Product bougthGame = Publisher.GetGame(availableGames[rnd.Next(0, availableGames.Count)]);
+                Product bougthGame = Publisher.GetGame(availableGames[_rnd.Next(0, availableGames.Count)]);
 
                 if (bougthGame != null)
                 {
@@ -65,7 +65,7 @@ namespace PG3301_Software_Design
         //Starts up the Market and creating games
         protected override void Task()
         {
-            Thread.Sleep(rnd.Next(40, 600));
+            Thread.Sleep(_rnd.Next(40, 600));
             CreateGame();
         }
     }
