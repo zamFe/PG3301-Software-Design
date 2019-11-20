@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace PG3301_Software_Design
 {
-    class GameKeyDistributor
+    class ProductDistributor
     {
 
         private readonly Dictionary<string, List<Product>> Products = new Dictionary<string, List<Product>>();

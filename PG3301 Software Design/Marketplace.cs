@@ -9,7 +9,7 @@ namespace PG3301_Software_Design
     {
         private readonly object _lock = new object();
 
-        public GameKeyDistributor Publisher = new GameKeyDistributor();
+        public ProductDistributor Publisher = new ProductDistributor();
 
         Random rnd = new Random();
 
@@ -17,7 +17,7 @@ namespace PG3301_Software_Design
         {
             lock(_lock)
             {
-                Publisher.AddGame(GameKeyController.MakeProduct());
+                Publisher.AddGame(ProductController.MakeProduct());
             }
         }
 

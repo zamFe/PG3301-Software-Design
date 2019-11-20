@@ -5,7 +5,7 @@ using System.Text;
 namespace PG3301_Software_Design
 {
    
-    static class GameKeyController
+    static class ProductController
     {
         //Create A Game with a Key and returns it
         public static Product MakeProduct()
