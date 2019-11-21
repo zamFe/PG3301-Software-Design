@@ -5,7 +5,7 @@ using System.Text;
 namespace PG3301_Software_Design
 {
    
-    static class ProductFlyweightFactory
+    public static class ProductFlyweightFactory
     {
 
         private static readonly Dictionary<IGame, Product> _productByGame = new Dictionary<IGame, Product>();
