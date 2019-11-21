@@ -15,7 +15,7 @@ namespace PG3301_Software_Design
         /* Adds Product to list in ditionary corresponding to the games name
          * If games name isn't in dictionary, create new list and map to that name
          */
-        public void AddGame(Product product)
+        public void AddProduct(Product product)
         {
             if (!Products.ContainsKey(product.Game.GetName()))
             {
@@ -28,7 +28,7 @@ namespace PG3301_Software_Design
         /* Removes specific product
          * If not in Dictionary just return
          */
-        public void RemoveGame(Product product)
+        public void RemoveProduct(Product product)
         {
             if(!Products.ContainsKey(product.Game.GetName()))
             {
@@ -48,9 +48,9 @@ namespace PG3301_Software_Design
         }
 
             //gets first GameKey with matching name 
-            public Product GetGame(string gameName)
+            public Product GetProduct(string gameName)
             {
-                if (!GameAvailable(gameName))
+                if (!ProductAvailable(gameName))
                 {
                     //Game Not Available
                     return null;
@@ -65,8 +65,8 @@ namespace PG3301_Software_Design
 
             }
 
-            //Returns true if specified game have keys available
-            public bool GameAvailable(string gameName)
+            //Returns true if there are products of specified game available
+            public bool ProductAvailable(string gameName)
             {
 
                 if (!Products.ContainsKey(gameName))
@@ -84,7 +84,7 @@ namespace PG3301_Software_Design
                 return true;
             }
 
-            //Return all registered games that have keys available
+            //Return all registered games that have products available
             public List<string> GetAvailableGames()
             {
                 lock (_lock)
@@ -96,7 +96,7 @@ namespace PG3301_Software_Design
                     List<string> gameListAvailable = new List<string>(gameList.Count);
                     for (int i = 0; i < gameList.Count; i++)
                     {
-                        if (GameAvailable(gameList[i]))
+                        if (ProductAvailable(gameList[i]))
                         {
                             gameListAvailable.Add(gameList[i]);
                         }

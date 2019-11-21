@@ -18,7 +18,7 @@ namespace PG3301_Software_Design
         {
             lock(_lock)
             {
-                Publisher.AddGame(ProductFlyweightFactory.MakeProduct());
+                Publisher.AddProduct(ProductFlyweightFactory.MakeProduct());
             }
         }
 
@@ -37,7 +37,7 @@ namespace PG3301_Software_Design
                 }
 
                 //Get random games from available games
-                Product bougthGame = Publisher.GetGame(availableGames[_rnd.Next(0, availableGames.Count)]);
+                Product bougthGame = Publisher.GetProduct(availableGames[_rnd.Next(0, availableGames.Count)]);
 
                 if (bougthGame != null)
                 {
