@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PG3301_Software_Design
 {
-    class Product
+    public class Product
     {
         public IGame Game;
         public string Key;
