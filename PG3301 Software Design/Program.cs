@@ -37,6 +37,9 @@ namespace PG3301_Software_Design
             {
                 customer.Stop();
             }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
     }
 }
