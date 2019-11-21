@@ -37,7 +37,7 @@ namespace ProductDistributerTest
 
             ProductDistributor producer = new ProductDistributor();
 
-            Assert.IsFalse(producer.ProductAvailable("Joe Mama"));
+            Assert.IsFalse(producer.ProductAvailable("Escape from Tarkov"));
 
         }
 
@@ -51,7 +51,7 @@ namespace ProductDistributerTest
 
             producer.AddProduct(testProduct);
 
-            Assert.IsFalse(producer.ProductAvailable("Candis"));
+            Assert.IsFalse(producer.ProductAvailable("TestGame"));
         }
 
 
