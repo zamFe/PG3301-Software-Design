@@ -21,10 +21,13 @@ namespace PG3301_Software_Design
             {
                 Products.Add(product.Game.GetName(), new List<Product>());
             }
+
             List<Product> games = Products[product.Game.GetName()];
             games.Add(product);
+            
             Console.WriteLine("Added - " + product.Game.GetEdition());
         }
+
         /* Removes specific product
          * If not in Dictionary just return
          */
@@ -47,26 +50,26 @@ namespace PG3301_Software_Design
             }
         }
 
-            //gets first GameKey with matching name 
-            public Product GetProduct(string gameName)
+        //gets first GameKey with matching name 
+        public Product GetProduct(string gameName)
+        {
+            if (!ProductAvailable(gameName))
             {
-                if (!ProductAvailable(gameName))
-                {
-                    //Game Not Available
-                    return null;
-                }
-
-                List<Product> games = Products[gameName];
-
-                Product game = games[0];
-                games.RemoveAt(0);
-
-                return game;
-
+                //Game Not Available
+                return null;
             }
 
-            //Returns true if there are products of specified game available
-            public bool ProductAvailable(string gameName)
+            List<Product> games = Products[gameName];
+
+            Product game = games[0];
+            games.RemoveAt(0);
+
+            return game;
+
+        }
+
+        //Returns true if there are products of specified game available
+        public bool ProductAvailable(string gameName)
             {
 
                 if (!Products.ContainsKey(gameName))
@@ -84,26 +87,27 @@ namespace PG3301_Software_Design
                 return true;
             }
 
-            //Return all registered games that have products available
-            public List<string> GetAvailableGames()
+        //Return all registered games that have products available
+        public List<string> GetAvailableGames()
+        {
+            lock (_lock)
             {
-                lock (_lock)
-                {
-                    //games registered in dictionary
-                    List<string> gameList = new List<string>(Products.Keys);
+                //games registered in dictionary
+                List<string> gameList = new List<string>(Products.Keys);
 
-                    //check if there are keys left for each game
-                    List<string> gameListAvailable = new List<string>(gameList.Count);
-                    for (int i = 0; i < gameList.Count; i++)
+                //check if there are keys left for each game
+                List<string> gameListAvailable = new List<string>(gameList.Count);
+                    
+                for (int i = 0; i < gameList.Count; i++)
                     {
-                        if (ProductAvailable(gameList[i]))
-                        {
-                            gameListAvailable.Add(gameList[i]);
-                        }
+                    if (ProductAvailable(gameList[i]))
+                    {
+                        gameListAvailable.Add(gameList[i]);
                     }
-
-                    return gameListAvailable;
                 }
+                return gameListAvailable;
             }
         }
+        
     }
+}
