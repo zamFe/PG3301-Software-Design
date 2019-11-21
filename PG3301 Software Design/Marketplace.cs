@@ -18,7 +18,7 @@ namespace PG3301_Software_Design
         {
             lock(_lock)
             {
-                Publisher.AddGame(ProductController.MakeProduct());
+                Publisher.AddGame(ProductFlyweightFactory.MakeProduct());
             }
         }
 

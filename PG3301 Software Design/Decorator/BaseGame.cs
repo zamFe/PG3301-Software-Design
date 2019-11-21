@@ -38,5 +38,18 @@ namespace PG3301_Software_Design
         {
             return GetEdition() + "\nPrice: " + _price + "\n";
         }
+
+        public bool Equals(IGame game)
+        {
+            if (_name != game.GetName())
+                return false;
+            if (_description != game.GetDescription())
+                return false;
+            if (_price != game.GetPrice())
+                return false;
+
+            return true;
+        }
+
     }
 }

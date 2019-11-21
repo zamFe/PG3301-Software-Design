@@ -13,5 +13,7 @@ namespace PG3301_Software_Design
         string GetEdition();
 
         string ToString();
+
+        bool Equals(IGame game);
     }
 }
