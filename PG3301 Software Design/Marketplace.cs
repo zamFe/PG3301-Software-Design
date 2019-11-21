@@ -67,7 +67,7 @@ namespace PG3301_Software_Design
         //Market will create games as long as thread is running
         protected override void Task()
         {
-            Thread.Sleep(_rnd.Next(40, 600));
+            Thread.Sleep(_rnd.Next(50, 500));
             CreateProduct();
         }
     }

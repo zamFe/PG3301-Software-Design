@@ -19,7 +19,6 @@ namespace PG3301_Software_Design
             //product already exist? Just return existing product with new key
             if (_productByGame.ContainsKey(game))
             {
-
                 Product product = _productByGame[game];
                 product.Key = key;
                 return product;
