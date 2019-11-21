@@ -11,7 +11,7 @@ namespace ProductDistributerTest
         [Test]
         public void TestGetAvailbleGamesEmtyList()
         {
-            //TEST: get games from empty list
+
             ProductDistributor producer = new ProductDistributor();
 
             Assert.IsEmpty(producer.GetAvailableGames());
@@ -21,7 +21,7 @@ namespace ProductDistributerTest
         [Test]
         public void TestGetAvailableGamesNonEmptyList()
         {
-            //Get games from non-empty list
+
             ProductDistributor producer = new ProductDistributor();
             Product testProduct = ProductFlyweightFactory.MakeProduct();
 
@@ -71,6 +71,7 @@ namespace ProductDistributerTest
         [Test]
         public void TestGetProductNoGamesFound()
         {
+
             ProductDistributor producer = new ProductDistributor();
 
             Assert.IsNull(producer.GetProduct("Call of Duty"));
@@ -80,6 +81,7 @@ namespace ProductDistributerTest
         [Test]
         public void TestGetProductGamesFound()
         {
+
             ProductDistributor producer = new ProductDistributor();
             Product testProduct = ProductFlyweightFactory.MakeProduct();
 
@@ -93,6 +95,7 @@ namespace ProductDistributerTest
         [Test]
         public void TestRemoveProduct()
         {
+
             ProductDistributor producer = new ProductDistributor();
             Product testProduct = ProductFlyweightFactory.MakeProduct();
 
